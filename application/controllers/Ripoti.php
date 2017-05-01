@@ -4,16 +4,16 @@
  * Created by PhpStorm.
  * User: James Sinkala
  * Date: 5/1/2017
- * Time: 11:22 AM
+ * Time: 4:17 PM
  */
-class Sadaka extends CI_Controller{
+class Ripoti extends CI_Controller{
 
     public function index(){
 
-        $menu = ['title'=>'Sadaka'];
+        $menu = ['title'=>'Ripoti'];
 
         $this->load->view('header_view',$menu);
-        $this->load->view('sadaka_view');
+        $this->load->view('ripoti_view');
         $this->load->view('footer_view');
     }
 

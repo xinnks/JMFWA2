@@ -94,10 +94,8 @@
     </div>
 
     <div class="links">
-        <?php echo anchor(base_url().'sadaka','Sadaka'); ?>
-        <?php echo anchor(base_url().'zaka','Zaka'); ?>
-        <?php echo anchor(base_url().'shukrani','Shukrani'); ?>
-        <?php echo anchor(base_url().'somo','Somo'); ?>
+        <?php echo anchor(base_url().'matoleo','Matoleo'); ?>
+        <?php echo anchor(base_url().'Waumini','Waumini'); ?>
         <?php echo anchor(base_url().'ripoti','Ripoti'); ?>
     </div>
 </div>
