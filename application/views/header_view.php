@@ -24,68 +24,66 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+    <!-- css -->
+    <link rel="stylesheet" href="<?php echo base_url().'assets/css/app.css' ?>">
+
+
     <!-- Styles -->
     <style>
         html, body {
             background-color: #fff;
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
-            font-weight: 100;
+            font-weight: 600;
             height: 100vh;
             margin: 0;
         }
-
-        .full-height {
-            height: 100vh;
+        .footer{
+            background-color: #204d74;
+            color: #fff;
+            height: 80px;
         }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
+        .footer-credits{
+            margin-top: 30px;
+            font-size: 14px;
         }
-
-        .position-ref {
-            position: relative;
+        .footer-justify{
+            height: 50px;
         }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
+        .btn{
+            border-radius: 0;
+            font-weight: 600;
         }
-
-        .content {
-            text-align: center;
+        .navbar{
+            /*background-color: #e3f2fd;*/
         }
-
         .my-hr{
             border-top: 1px solid #1f648b;
         }
-
-        .title {
-            font-size: 54px;
-            font-weight: 500;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
-        .logo-img{
-            height: 300px;
-            width: 300px;
+        .menu-brand{
+            height: 80px;
+            width: 80px;
             margin: 10px auto;
+        }
+
+        .text-center > h3, select > option{
+            font-weight: 600;
+        }
+        #form_sadaka{
+            background-color: #ccffcc;
+            border: solid 1px #419641;
+        }
+        #form_zaka{
+         background-color: #e6f3f7;
+         border: solid 1px #28a4c9;
+        }
+        #form_somo{
+             background-color: #f9e3c2;
+             border: solid 1px #eea236;#b92c28
+        }
+        #form_shukrani{
+            background-color: #f1d4d4;
+            border: solid 1px #b92c28;
         }
     </style>
 </head>
@@ -95,7 +93,7 @@
     <div class="container text-center">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="text-center">
-            <img class="menu-brand" src="<?php echo base_url().'asset/images/st_francis.png'; ?>" alt="JMFWA">
+            <img class="menu-brand" src="<?php echo base_url().'assets/images/st_francis.png'; ?>" alt="JMFWA">
         </div>
         <div class="row col-md-8 col-md-offset-2">
             <hr class="my-hr">
