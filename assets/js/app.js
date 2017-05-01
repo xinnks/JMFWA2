@@ -1,6 +1,3 @@
-Vue.component('sadaka', {
-    template: '<form action=""> <div class="col-md-8 col-md-offset-2" id="form_sadaka"><div class="text-center"><h3>Weka Sadaka Mpya</h3></div><div class="form-group col-md-3"> <select class="form-control" id="inlineFormCustomSelect"> <option selected>Familia ya..</option> <option value="Sinkala">Sinkala</option> <option value="Miguu">Miguu</option> <option value="Matata">Matata</option> </select> </div> <div class="form-group col-md-3"> <input class="form-control" type="text" placeholder="Sadaka ya Kwanza"> </div> <div class="form-group col-md-3"> <input class="form-control" type="text" placeholder="Sadaka ya Pili"> </div><div class="form-group col-md-3"> <input type="submit" class="form-control btn btn-default" value="submit"> </div></div> </form>'
-})
 Vue.component('zaka', {
     template: '<form action=""> <div class="col-md-8 col-md-offset-2" id="form_zaka"><div class="text-center"><h3>Weka Zaka Mpya</h3></div><div class="form-group col-md-4"> <select class="form-control" id="inlineFormCustomSelect"> <option selected>Jina..</option> <option value="Sinkala">Sinkala</option> <option value="Miguu">Miguu</option> <option value="Matata">Matata</option> </select> </div> <div class="form-group col-md-4"> <input class="form-control" type="text" placeholder="Kiasi"> </div> <div class="form-group col-md-4"> <input type="submit" class="form-control btn btn-default" value="submit"> </div></div> </form>'
 })
@@ -89,17 +86,22 @@ var app = new Vue({
             }, 1000),
             addSadaka: function(){
                 var pp = this
-                axios.post('/matoleo/addSadaka', {
-                        Family: pp.add_sadaka_family,
-                        sadakaOne: pp.add_sadaka_one,
-                        sadakaTwo: pp.add_sadaka_two
-                    })
-                    .then(function (response) {
-                        pp.getLatestSadaka()
-                    })
-                    .catch(function (error) {
-                        alert(error)
-                    });
+                if(pp.add_sadaka_family != '' && pp.add_sadaka_one != '' && pp.add_sadaka_two != '' ){
+                    axios.post('http://jumuiya.cp/matoleo/addSadaka?family='+pp.add_sadaka_family+'&sadakaOne='+pp.add_sadaka_one+'&sadakaTwo='+pp.add_sadaka_two )
+                        .then(function (response) {
+                            if(response = 200){
+                                pp.getLatestSadaka()
+                                pp.add_sadaka_family = ""
+                                pp.add_sadaka_one = ""
+                                pp.add_sadaka_two = ""
+                            }
+                        })
+                        .catch(function (error) {
+                            alert(error)
+                        });
+                }else{
+                    alert("fill in empty fields")
+                }
             }
         }
     })

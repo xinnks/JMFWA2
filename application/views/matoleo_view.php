@@ -16,8 +16,9 @@
     </div>
 
     <div class="row">
-        <input v-model="add_sadaka_one" class="form-control" type="text" placeholder="Sadaka ya Kwanza"><span>{{ add_sadaka_one }}</span>
-        <sadaka v-show="sadakaVisible"> </sadaka>
+        <div class="col-md-8 col-md-offset-2" id="form_sadaka" v-show="sadakaVisible"><div class="text-center"><h3>Weka Sadaka Mpya</h3></div><div class="form-group col-md-3"> <select class="form-control" id="inlineFormCustomSelect" v-model="add_sadaka_family"> <option value="Sinkala">Sinkala</option> <option value="Miguu">Miguu</option> <option value="Matata">Matata</option> </select> </div> <div class="form-group col-md-3"> <input class="form-control" type="text" placeholder="Sadaka ya Kwanza" v-model="add_sadaka_one"> </div> <div class="form-group col-md-3"> <input class="form-control" type="text" placeholder="Sadaka ya Pili" v-model="add_sadaka_two"> </div><div class="form-group col-md-3"> <input type="submit" class="form-control btn btn-default" value="submit" v-on:click="addSadaka"> </div></div>
+
+
         <zaka v-show="zakaVisible"></zaka>
         <somo v-show="somoVisible"></somo>
         <shukrani v-show="shukraniVisible"></shukrani>
@@ -34,10 +35,10 @@
             <tbody>
 
             <tr v-for="item in sadakaLatestData">
-                <td>{{ item["0"].tarehe }}</td>
-                <td>{{ item["0"].Familia }}</td>
-                <td>{{ item["0"].sadaka_ya_kwanza }}</td>
-                <td>{{ item["0"].sadaka_ya_pili }}</td>
+                <td>{{ item.tarehe }}</td>
+                <td>{{ item.familia }}</td>
+                <td>{{ item.sadaka_ya_kwanza }}</td>
+                <td>{{ item.sadaka_ya_pili }}</td>
             </tr>
 
             </tbody>

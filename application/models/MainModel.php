@@ -12,9 +12,21 @@ class MainModel extends CI_Model{
         $this->db->select('*');
         $this->db->from('sadaka');
         $this->db->limit(5);
+        $this->db->order_by('time_added', 'DESC');
         $sql = $this->db->get();
 
         return $sql->result();
+    }
+
+    public function addSadaka($data){
+
+        $sql = $this->db->insert('sadaka',$data);
+
+        if($sql){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
