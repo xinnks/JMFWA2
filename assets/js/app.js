@@ -17,6 +17,30 @@ $.getScript( "bootstrap.min.js" )
         $( "div.log" ).text( "Triggered ajaxError handler." );
     });
 
+$.getScript( "axios.min.js" )
+    .done(function( script, textStatus ) {
+        console.log( textStatus );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+        $( "div.log" ).text( "Triggered ajaxError handler." );
+    });
+
+$.getScript( "lodash.js" )
+    .done(function( script, textStatus ) {
+        console.log( textStatus );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+        $( "div.log" ).text( "Triggered ajaxError handler." );
+    });
+
+$.getScript( "vue.min.js" )
+    .done(function( script, textStatus ) {
+        console.log( textStatus );
+    })
+    .fail(function( jqxhr, settings, exception ) {
+        $( "div.log" ).text( "Triggered ajaxError handler." );
+    });
+
 $.ajaxSetup({
     cache: true
 });

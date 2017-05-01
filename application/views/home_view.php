@@ -7,19 +7,19 @@
  */
 ?>
 <!doctype html>
-<html lang="{{ config('app.locale') }}">
+<html lang="<?php echo config_item('language'); ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JFMWA</title>
+    <title><?php echo $title; ?></title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('favicons/favicon-32x32.png') }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ asset('favicons/favicon-16x16.png') }}" sizes="16x16">
-    <link rel="manifest" href="{{ asset('favicons/manifest.json') }}">
-    <link rel="mask-icon" href="{{ asset('favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/favicons/apple-touch-icon.png'; ?>">
+    <link rel="icon" type="image/png" href="<?php echo base_url().'assets/favicons/favicon-32x32.png'; ?>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?php echo base_url().'assets/favicons/favicon-16x16.png'; ?>" sizes="16x16">
+    <link rel="manifest" href="<?php echo base_url().'assets/favicons/manifest.json'; ?>">
+    <link rel="mask-icon" href="<?php echo base_url().'assets/favicons/safari-pinned-tab.svg'; ?>" color="#5bbad5">
     <meta name="theme-color" content="#a084b8">
 
     <!-- Fonts -->
@@ -88,17 +88,17 @@
 </head>
 <body>
 <div class="content">
-    <img class="logo-img" src="{{ asset('images/st_francis.png') }}">
+    <img class="logo-img" src="<?php echo base_url().'assets/images/st_francis.png'; ?>">
     <div class="title m-b-md">
         Jumuiya Ya Mt. Fransisko wa Asisi
     </div>
 
     <div class="links">
-        <?php anchor(base_url().'sadaka','Sadaka'); ?>
-        <?php anchor(base_url().'zaka','Zaka'); ?>
-        <?php anchor(base_url().'shukrani','Shukrani'); ?>
-        <?php anchor(base_url().'somo','Somo'); ?>
-        <?php anchor(base_url().'ripoti','Ripoti'); ?>
+        <?php echo anchor(base_url().'sadaka','Sadaka'); ?>
+        <?php echo anchor(base_url().'zaka','Zaka'); ?>
+        <?php echo anchor(base_url().'shukrani','Shukrani'); ?>
+        <?php echo anchor(base_url().'somo','Somo'); ?>
+        <?php echo anchor(base_url().'ripoti','Ripoti'); ?>
     </div>
 </div>
 </body>
